@@ -5,7 +5,7 @@ import app.evolute.compose.common.constants.ExceptionMessage
 import app.evolute.compose.data.mapper.toSocialModel
 import app.evolute.compose.data.remote.ServiceApi
 import app.evolute.compose.domain.model.SocialModel
-import com.matin.social.domain.repository.RepositoryInterface
+import app.evolute.compose.domain.repository.RepositoryInterface
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException

@@ -1,4 +1,8 @@
 package app.evolute.compose.presentation.feature.home
 
-class HomeScreen {
+import androidx.compose.runtime.Composable
+
+@Composable
+fun HomeScreen() {
+
 }
