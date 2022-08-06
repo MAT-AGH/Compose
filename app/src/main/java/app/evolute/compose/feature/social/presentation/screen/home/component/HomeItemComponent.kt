@@ -16,12 +16,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.evolute.compose.R
 import app.evolute.compose.common.getEmpty
 import app.evolute.compose.feature.social.domain.model.PostModel
 import coil.compose.rememberAsyncImagePainter
 
+@Preview
 @Composable
 fun HomeItemComponent(
     postModel: PostModel,

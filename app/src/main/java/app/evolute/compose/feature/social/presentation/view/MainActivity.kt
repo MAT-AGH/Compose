@@ -27,5 +27,5 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-//endregion Override Methods
+    //endregion Override Methods
 }
