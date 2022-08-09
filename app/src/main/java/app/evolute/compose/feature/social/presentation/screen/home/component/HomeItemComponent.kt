@@ -23,7 +23,6 @@ import app.evolute.compose.common.getEmpty
 import app.evolute.compose.feature.social.domain.model.PostModel
 import coil.compose.rememberAsyncImagePainter
 
-@Preview
 @Composable
 fun HomeItemComponent(
     postModel: PostModel,
@@ -60,4 +59,10 @@ fun HomeItemComponent(
             )
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun HomeItemComponentPreview() {
+    HomeItemComponent(postModel = PostModel(), modifier = Modifier)
 }
