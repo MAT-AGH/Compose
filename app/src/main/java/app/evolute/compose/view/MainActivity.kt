@@ -3,11 +3,10 @@ package app.evolute.compose.view
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import app.evolute.compose.ui.theme.AppTheme
+import app.evolute.compose.feature.social.domain.model.PostModel
+import app.evolute.compose.feature.social.presentation.screen.home.component.HomeItemComponent
+import app.evolute.compose.ui.theme.ComposeAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -17,14 +16,11 @@ class MainActivity : ComponentActivity() {
         super.onPostCreate(savedInstanceState)
 
         setContent {
-            AppTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-
-
-                }
+            ComposeAppTheme(
+                dynamicColor = false,
+                darkTheme = false
+            ) {
+                HomeItemComponent(postModel = PostModel(), modifier = Modifier)
             }
         }
     }
