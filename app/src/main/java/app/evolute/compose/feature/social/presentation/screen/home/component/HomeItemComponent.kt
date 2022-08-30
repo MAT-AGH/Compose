@@ -18,6 +18,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.evolute.compose.feature.social.domain.model.PostModel
+import app.evolute.compose.ui.theme.ComposeAppTheme
 import app.evolute.compose.ui.theme.Shape
 
 @Composable
@@ -28,12 +29,11 @@ fun HomeItemComponent(
 ) {
     val post: MutableState<PostModel> = remember { mutableStateOf(postModel) }
 
-    Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
+    Box(
         modifier = modifier
             .background(MaterialTheme.colorScheme.background)
-            .fillMaxSize(1f)
+            .fillMaxSize(1f),
+        contentAlignment = Alignment.Center
     ) {
         Column(
             modifier = Modifier
@@ -48,25 +48,31 @@ fun HomeItemComponent(
                 .fillMaxWidth(1f)
         ) {
 
+            Spacer(
+                modifier = Modifier
+                    .fillMaxWidth(1f)
+                    .height(15.dp)
+            )
+
             Row(
-                modifier = Modifier.fillMaxWidth(1f)
+                modifier = Modifier
+                    .fillMaxWidth(1f)
             ) {
                 Text(
                     modifier = Modifier
                         .padding(
-                            start = 20.dp
+                            start = 35.dp
                         ),
-                    text = "Name",
+                    text = "PostName",
                     textAlign = TextAlign.Center,
-                    fontSize = MaterialTheme.typography.bodyMedium.fontSize,
-                    color = MaterialTheme.typography.bodyMedium.color
+                    style = MaterialTheme.typography.titleLarge
                 )
             }
 
             Spacer(
                 modifier = Modifier
                     .fillMaxWidth(1f)
-                    .height(20.dp)
+                    .height(15.dp)
             )
 
             Column(
@@ -100,6 +106,26 @@ fun HomeItemComponent(
                     .height(20.dp)
             )
 
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth(1f)
+            ) {
+                Text(
+                    modifier = Modifier
+                        .padding(
+                            start = 20.dp
+                        ),
+                    text = "Manufacturer",
+                    textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
+
+            Spacer(
+                modifier = Modifier
+                    .fillMaxWidth(1f)
+                    .height(20.dp)
+            )
         }
     }
 }
@@ -107,5 +133,7 @@ fun HomeItemComponent(
 @Preview(showBackground = false)
 @Composable
 fun HomeItemComponentPreview() {
-    HomeItemComponent(postModel = PostModel(), modifier = Modifier)
+    ComposeAppTheme {
+        HomeItemComponent(postModel = PostModel(), modifier = Modifier)
+    }
 }
